@@ -1,0 +1,31 @@
+[build]
+  # Directory contenente i file del frontend
+  publish = "public"
+  
+  # Nessun comando di build necessario per questo progetto statico
+  command = ""
+
+[functions]
+  # Directory contenente le serverless functions
+  directory = "netlify/functions"
+  
+  # Configurazione Node.js per le functions
+  node_bundler = "esbuild"
+
+[dev]
+  # Disabilita Edge Functions in locale (non servono)
+  autoLaunch = false
+
+[[redirects]]
+  # Reindirizza tutte le richieste API alle functions
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  # Headers CORS per permettere richieste dal frontend
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"

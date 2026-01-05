@@ -1,0 +1,25 @@
+{
+  "name": "cartina-pescatore",
+  "version": "1.0.0",
+  "description": "Sistema di identificazione zone di pesca - Bacino n°5",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'No build required'",
+    "deploy": "netlify deploy --prod"
+  },
+  "keywords": [
+    "pesca",
+    "fishing",
+    "netlify",
+    "serverless"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@netlify/functions": "^2.8.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

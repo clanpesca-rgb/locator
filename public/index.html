@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartina del Pescatore 2023 - Bacino n°5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎣 Cartina del Pescatore 2023</h1>
+            <p class="subtitle">Bacino n°5 - Verbano • Lario • Ceresio</p>
+            <p class="organization">A.T.S. delle Prealpi Lombarde F.I.P.S.A.S.</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Options -->
+            <section class="search-section">
+                <div class="search-card">
+                    <h2>🌍 Trova Zone di Pesca</h2>
+                    
+                    <!-- GPS Button -->
+                    <button id="gpsBtn" class="btn btn-primary btn-large">
+                        <span class="btn-icon">📍</span>
+                        Usa la Mia Posizione GPS
+                    </button>
+
+                    <!-- Manual Coordinates -->
+                    <div class="manual-search">
+                        <h3>Oppure inserisci coordinate manualmente</h3>
+                        <div class="input-group">
+                            <input type="number" id="latInput" placeholder="Latitudine (es. 45.8081)" step="0.0001">
+                            <input type="number" id="lonInput" placeholder="Longitudine (es. 9.0852)" step="0.0001">
+                        </div>
+                        <button id="searchCoordsBtn" class="btn btn-secondary">
+                            Cerca per Coordinate
+                        </button>
+                    </div>
+
+                    <!-- Name Search -->
+                    <div class="manual-search">
+                        <h3>Cerca per nome del lago</h3>
+                        <input type="text" id="nameInput" placeholder="Es: Como, Maggiore, Varese...">
+                        <button id="searchNameBtn" class="btn btn-secondary">
+                            Cerca per Nome
+                        </button>
+                    </div>
+
+                    <!-- Show All -->
+                    <button id="showAllBtn" class="btn btn-outline">
+                        📋 Mostra Tutte le Zone
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Caricamento in corso...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2 id="resultsTitle">Risultati della Ricerca</h2>
+                    <span id="resultsCount" class="badge"></span>
+                </div>
+                <div id="resultsContainer" class="results-container">
+                    <!-- I risultati verranno inseriti qui dinamicamente -->
+                </div>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <details class="info-details">
+                    <summary>ℹ️ Informazioni Generali</summary>
+                    <div class="info-content">
+                        <div class="info-block">
+                            <h3>📖 Classificazione delle Acque</h3>
+                            <ul>
+                                <li><strong>Tipo A:</strong> Laghi di maggiori dimensioni</li>
+                                <li><strong>Tipo B:</strong> Laghi d'alta quota e corsi d'acqua con salmonidi</li>
+                                <li><strong>Tipo C:</strong> Laghi minori e corsi d'acqua con ciprinidi</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>🎨 Categorie Zone (Colori)</h3>
+                            <ul>
+                                <li><span class="badge badge-gialla">GIALLA</span> Pesca da riva in acque lacustri e tipo C</li>
+                                <li><span class="badge badge-azzurra">AZZURRA</span> Pesca da barca in acque lacustri e tipo B</li>
+                                <li><span class="badge badge-verde">VERDE</span> Pesca da riva provincia di Varese</li>
+                                <li><span class="badge badge-rosa">ROSA</span> Pesca da natante Lago Maggiore</li>
+                                <li><span class="badge badge-rossa">ROSSA</span> Gestione privata o uso civico</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>💶 Costi Standard</h3>
+                            <ul>
+                                <li>Licenza Regionale: € 23,00</li>
+                                <li>Tessera F.I.P.S.A.S. Adulti: € 30,00</li>
+                                <li>Tessera F.I.P.S.A.S. Giovani: € 6,00</li>
+                                <li>Gestione Annuale: € 30,00</li>
+                                <li>Gestione Ridotta: € 15,00</li>
+                                <li>Natante F.I.P.S.A.S.: € 50,00</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>👤 Esenzioni</h3>
+                            <p><strong>Sono esonerati dalla licenza regionale:</strong></p>
+                            <ul>
+                                <li>Minorenni (sotto i 18 anni)</li>
+                                <li>Over 65 anni</li>
+                                <li>Diversamente abili</li>
+                            </ul>
+                            <p><strong>Sono esenti dai contributi:</strong></p>
+                            <ul>
+                                <li>Giovani nati dopo 01.01.2008 (alcuni contributi)</li>
+                                <li>Disabili con Legge 104 art. 3 c. 3</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-block">
+                            <h3>📞 Contatti Utili</h3>
+                            <ul>
+                                <li><strong>A.P.S. Como F.I.P.S.A.S.</strong><br>
+                                    Tel: 031.302747 | Email: info@aps-como.it</li>
+                                <li><strong>Sez. Prov. Lecco F.I.P.S.A.S.</strong><br>
+                                    Tel: 0341.350117 | Email: fipsaslecco@libero.it</li>
+                                <li><strong>Sez. Prov. Varese F.I.P.S.A.S.</strong><br>
+                                    Tel: 0332.280386 | Email: varese@fipsas.it</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2023 A.T.S. delle Prealpi Lombarde F.I.P.S.A.S.</p>
+            <p>Rispetta sempre le normative vigenti e l'ambiente</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
