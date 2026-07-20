@@ -1,0 +1,38 @@
+name: Report Instagram giornaliero
+
+on:
+  schedule:
+    # 06:30 UTC = 8:30 ora italiana (estate). D'inverno diventa 7:30.
+    - cron: "30 6 * * *"
+  # Permette di lanciare il report a mano dal sito/app di GitHub:
+  # tab Actions → Report Instagram giornaliero → Run workflow
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa dipendenze
+        run: pip install -r instagram_report/requirements.txt
+
+      - name: Genera e invia il report
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          EMAIL_MITTENTE: ${{ secrets.EMAIL_MITTENTE }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
+        run: |
+          if [ -z "$IG_TOKEN" ]; then
+            echo "Secrets non ancora configurati: salto l'esecuzione."
+            echo "Vai su Settings → Secrets and variables → Actions e aggiungi le chiavi."
+            exit 0
+          fi
+          python instagram_report/daily_report.py
