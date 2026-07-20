@@ -32,7 +32,9 @@ IG_USER_ID = os.environ.get("IG_USER_ID", "")
 CLAUDE_API_KEY = os.environ.get("CLAUDE_API_KEY", "")
 EMAIL_MITTENTE = os.environ.get("EMAIL_MITTENTE", "")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "")  # Password per le app di Gmail, NON la password normale
-EMAIL_DESTINATARIO = os.environ.get("EMAIL_DESTINATARIO", EMAIL_MITTENTE)
+# "or" e non default di .get(): in GitHub Actions la variabile esiste sempre
+# ma può essere una stringa vuota se il secret non è configurato
+EMAIL_DESTINATARIO = os.environ.get("EMAIL_DESTINATARIO") or EMAIL_MITTENTE
 
 BASE = "https://graph.instagram.com/v21.0"
 
