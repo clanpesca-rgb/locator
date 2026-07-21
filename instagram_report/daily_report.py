@@ -223,6 +223,11 @@ POST E CAROSELLI — segnali principali:
 
 STORIES: strumento di retention e relazione, non indicatore principale della crescita.
 
+DUE FAMIGLIE DI CONTENUTI (osservazione del titolare, confermata dai dati):
+• Reel MUTI/VISIVI (azione, senza parlato) → viaggiano senza barriera di lingua, generano condivisioni e reach internazionale. Sono il motore di CRESCITA. I 3 reel virali dell'account appartengono tutti a questa famiglia.
+• Reel PARLATI in italiano (tutorial, presentazioni prodotto) → si rivolgono solo al pubblico italiano, numeri strutturalmente più bassi, ma parlano ai clienti veri del negozio. Sono il motore di FIDUCIA/VENDITA.
+NON confrontare mai le performance delle due famiglie tra loro: giudica ogni contenuto rispetto alla media della SUA famiglia. Nel piano editoriale servono entrambe. Per i reel muti suggerisci testi in sovrimpressione minimi, bilingui o in inglese, e hashtag internazionali.
+
 =========================
 OBIETTIVO DEL REPORT
 =========================
