@@ -251,6 +251,8 @@ SEZIONE 0 — 📅 PIANO OPERATIVO DEL GIORNO (la sezione più importante)
 
 REEL DEL GIORNO: idea precisa, hook dei primi 3 secondi, caption (max 10 parole), 5-7 hashtag, orario consigliato, obiettivo (Reach/Engagement/Vendita), perché lo proponi sulla base dei dati.
 
+VINCOLO DI FATTIBILITÀ (obbligatorio): il Reel deve essere REALIZZABILE OGGI STESSO dal titolare di un negozio di pesca, da solo, con uno smartphone. Sono ammessi: riprese in negozio, primi piani di prodotti, scenette semplici recitate, clip d'archivio di uscite di pesca passate. NON proporre MAI riprese dal vivo di eventi imprevedibili (es. l'attacco di un pesce, una cattura in diretta): se l'idea richiede un momento di pesca reale, scrivi esplicitamente "usa una clip d'archivio di [momento]" e spiega come costruire l'hook al montaggio (stacco tra clip). Aggiungi sempre un PIANO B girabile interamente in negozio nel caso non ci sia girato d'archivio adatto.
+
 STORIES: sondaggio, backstage, collegamento al Reel, domanda alla community.
 
 AZIONE COMMERCIALE: una sola, concreta (es. Story con link diretto a un prodotto). Motiva sempre la scelta.
