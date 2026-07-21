@@ -32,7 +32,9 @@ IG_USER_ID = os.environ.get("IG_USER_ID", "")
 CLAUDE_API_KEY = os.environ.get("CLAUDE_API_KEY", "")
 EMAIL_MITTENTE = os.environ.get("EMAIL_MITTENTE", "")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD", "")  # Password per le app di Gmail, NON la password normale
-EMAIL_DESTINATARIO = os.environ.get("EMAIL_DESTINATARIO", EMAIL_MITTENTE)
+# "or" e non default di .get(): in GitHub Actions la variabile esiste sempre
+# ma può essere una stringa vuota se il secret non è configurato
+EMAIL_DESTINATARIO = os.environ.get("EMAIL_DESTINATARIO") or EMAIL_MITTENTE
 
 BASE = "https://graph.instagram.com/v21.0"
 
@@ -70,7 +72,9 @@ def get_instagram_data():
         "access_token": IG_TOKEN,
     })
 
-    dati["follower_count"] = _get(f"{BASE}/{IG_USER_ID}/insights", {
+    # ATTENZIONE: questa metrica conta i NUOVI follower di ogni giorno
+    # (0 è un valore normale). Il totale follower sta in "profilo".
+    dati["nuovi_follower_al_giorno"] = _get(f"{BASE}/{IG_USER_ID}/insights", {
         "metric": "follower_count",
         "period": "day",
         "access_token": IG_TOKEN,
@@ -182,6 +186,12 @@ Per parlare di trend servono almeno 7-14 giorni.
 Confronta SEMPRE quando possibile: oggi, ieri, media ultimi 7 giorni, media ultimi 30 giorni.
 
 Se alcuni dati non sono disponibili NON inventarli. Se un dato riporta un campo "errore", segnalalo come limite dei dati.
+
+COME LEGGERE I DATI (importante, non sbagliare):
+• Il numero TOTALE di follower è in METRICHE ACCOUNT → "profilo" → "followers_count". Usa questo per il KPI Follower.
+• "nuovi_follower_al_giorno" indica i follower GUADAGNATI in quel giorno: 0 è un valore normale, NON un'anomalia.
+• Il valore di reach dell'ULTIMO giorno della serie è parziale (il report gira al mattino): non confrontarlo con i giorni completi e non segnalarlo come crollo.
+• Se un post ha "insights" con campo "errore" che menziona la conversione dell'account ("business account conversion" o simili), significa che il post è stato pubblicato PRIMA che l'account diventasse business: Meta non fornisce insights per quei post. È un limite noto e permanente, non un guasto da riparare: per quei post usa solo like e commenti.
 
 =========================
 CONOSCENZA INSTAGRAM
@@ -370,28 +380,45 @@ def check():
         print(f"   ✅ Connesso come @{profilo.get('username')} "
               f"({profilo.get('followers_count')} follower, {profilo.get('media_count')} post)")
 
-    print("\n3) Insights account...")
+    print("\n3) Insights account (risposte complete per la diagnosi)...")
     dati = get_instagram_data()
     for chiave, valore in dati.items():
         if "error" in valore:
-            print(f"   ❌ {chiave}: {valore['error'].get('message')}")
+            print(f"   ❌ {chiave}: {json.dumps(valore['error'], ensure_ascii=False)}")
             ok = False
         else:
-            print(f"   ✅ {chiave}: ok")
+            print(f"   ✅ {chiave}: {json.dumps(valore, ensure_ascii=False)[:400]}")
 
-    print("\n4) Insights di un post recente...")
-    media = _get(f"{BASE}/{IG_USER_ID}/media", {"fields": "id,media_type", "limit": 1, "access_token": IG_TOKEN})
+    print("\n4) Insights dei post recenti (metrica per metrica)...")
+    media = _get(f"{BASE}/{IG_USER_ID}/media", {
+        "fields": "id,media_type,media_product_type,timestamp",
+        "limit": 10,
+        "access_token": IG_TOKEN,
+    })
     lista = media.get("data", [])
     if not lista:
         print(f"   ❌ Impossibile leggere i post: {media.get('error', {}).get('message', 'nessun post')}")
         ok = False
-    else:
-        ins = get_media_insights(lista[0]["id"])
-        if "errore" in ins:
-            print(f"   ❌ Errore insights sul post: {ins['errore']}")
+    for post in lista:
+        print(f"   Post {post['id']} ({post.get('media_type')}/{post.get('media_product_type')}, {post.get('timestamp')})")
+        full = _get(f"{BASE}/{post['id']}/insights", {
+            "metric": "views,reach,saved,shares,likes,comments,total_interactions",
+            "access_token": IG_TOKEN,
+        })
+        if "error" in full:
+            print(f"      ❌ Set completo: {json.dumps(full['error'], ensure_ascii=False)}")
+            # prova ogni metrica da sola per capire QUALE non è accettata
+            for metrica in ["views", "reach", "saved", "shares", "likes", "comments", "total_interactions"]:
+                singola = _get(f"{BASE}/{post['id']}/insights", {"metric": metrica, "access_token": IG_TOKEN})
+                if "error" in singola:
+                    print(f"      ❌ {metrica}: {singola['error'].get('message')}")
+                else:
+                    v = singola.get("data", [{}])[0].get("values", [{}])[0].get("value")
+                    print(f"      ✅ {metrica} = {v}")
             ok = False
         else:
-            print(f"   ✅ Metriche disponibili: {', '.join(ins.keys())}")
+            valori = {m.get("name"): (m.get("values", [{}])[0].get("value")) for m in full.get("data", [])}
+            print(f"      ✅ {json.dumps(valori, ensure_ascii=False)}")
 
     print("\n5) Chiave API Claude...")
     try:
