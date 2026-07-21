@@ -72,7 +72,9 @@ def get_instagram_data():
         "access_token": IG_TOKEN,
     })
 
-    dati["follower_count"] = _get(f"{BASE}/{IG_USER_ID}/insights", {
+    # ATTENZIONE: questa metrica conta i NUOVI follower di ogni giorno
+    # (0 è un valore normale). Il totale follower sta in "profilo".
+    dati["nuovi_follower_al_giorno"] = _get(f"{BASE}/{IG_USER_ID}/insights", {
         "metric": "follower_count",
         "period": "day",
         "access_token": IG_TOKEN,
@@ -184,6 +186,12 @@ Per parlare di trend servono almeno 7-14 giorni.
 Confronta SEMPRE quando possibile: oggi, ieri, media ultimi 7 giorni, media ultimi 30 giorni.
 
 Se alcuni dati non sono disponibili NON inventarli. Se un dato riporta un campo "errore", segnalalo come limite dei dati.
+
+COME LEGGERE I DATI (importante, non sbagliare):
+• Il numero TOTALE di follower è in METRICHE ACCOUNT → "profilo" → "followers_count". Usa questo per il KPI Follower.
+• "nuovi_follower_al_giorno" indica i follower GUADAGNATI in quel giorno: 0 è un valore normale, NON un'anomalia.
+• Il valore di reach dell'ULTIMO giorno della serie è parziale (il report gira al mattino): non confrontarlo con i giorni completi e non segnalarlo come crollo.
+• Se un post ha "insights" con campo "errore" che menziona la conversione dell'account ("business account conversion" o simili), significa che il post è stato pubblicato PRIMA che l'account diventasse business: Meta non fornisce insights per quei post. È un limite noto e permanente, non un guasto da riparare: per quei post usa solo like e commenti.
 
 =========================
 CONOSCENZA INSTAGRAM
@@ -384,7 +392,7 @@ def check():
     print("\n4) Insights dei post recenti (metrica per metrica)...")
     media = _get(f"{BASE}/{IG_USER_ID}/media", {
         "fields": "id,media_type,media_product_type,timestamp",
-        "limit": 3,
+        "limit": 10,
         "access_token": IG_TOKEN,
     })
     lista = media.get("data", [])
