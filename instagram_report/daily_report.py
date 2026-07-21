@@ -372,28 +372,45 @@ def check():
         print(f"   ✅ Connesso come @{profilo.get('username')} "
               f"({profilo.get('followers_count')} follower, {profilo.get('media_count')} post)")
 
-    print("\n3) Insights account...")
+    print("\n3) Insights account (risposte complete per la diagnosi)...")
     dati = get_instagram_data()
     for chiave, valore in dati.items():
         if "error" in valore:
-            print(f"   ❌ {chiave}: {valore['error'].get('message')}")
+            print(f"   ❌ {chiave}: {json.dumps(valore['error'], ensure_ascii=False)}")
             ok = False
         else:
-            print(f"   ✅ {chiave}: ok")
+            print(f"   ✅ {chiave}: {json.dumps(valore, ensure_ascii=False)[:400]}")
 
-    print("\n4) Insights di un post recente...")
-    media = _get(f"{BASE}/{IG_USER_ID}/media", {"fields": "id,media_type", "limit": 1, "access_token": IG_TOKEN})
+    print("\n4) Insights dei post recenti (metrica per metrica)...")
+    media = _get(f"{BASE}/{IG_USER_ID}/media", {
+        "fields": "id,media_type,media_product_type,timestamp",
+        "limit": 3,
+        "access_token": IG_TOKEN,
+    })
     lista = media.get("data", [])
     if not lista:
         print(f"   ❌ Impossibile leggere i post: {media.get('error', {}).get('message', 'nessun post')}")
         ok = False
-    else:
-        ins = get_media_insights(lista[0]["id"])
-        if "errore" in ins:
-            print(f"   ❌ Errore insights sul post: {ins['errore']}")
+    for post in lista:
+        print(f"   Post {post['id']} ({post.get('media_type')}/{post.get('media_product_type')}, {post.get('timestamp')})")
+        full = _get(f"{BASE}/{post['id']}/insights", {
+            "metric": "views,reach,saved,shares,likes,comments,total_interactions",
+            "access_token": IG_TOKEN,
+        })
+        if "error" in full:
+            print(f"      ❌ Set completo: {json.dumps(full['error'], ensure_ascii=False)}")
+            # prova ogni metrica da sola per capire QUALE non è accettata
+            for metrica in ["views", "reach", "saved", "shares", "likes", "comments", "total_interactions"]:
+                singola = _get(f"{BASE}/{post['id']}/insights", {"metric": metrica, "access_token": IG_TOKEN})
+                if "error" in singola:
+                    print(f"      ❌ {metrica}: {singola['error'].get('message')}")
+                else:
+                    v = singola.get("data", [{}])[0].get("values", [{}])[0].get("value")
+                    print(f"      ✅ {metrica} = {v}")
             ok = False
         else:
-            print(f"   ✅ Metriche disponibili: {', '.join(ins.keys())}")
+            valori = {m.get("name"): (m.get("values", [{}])[0].get("value")) for m in full.get("data", [])}
+            print(f"      ✅ {json.dumps(valori, ensure_ascii=False)}")
 
     print("\n5) Chiave API Claude...")
     try:

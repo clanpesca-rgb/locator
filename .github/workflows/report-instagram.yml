@@ -7,6 +7,14 @@ on:
   # Permette di lanciare il report a mano dal sito/app di GitHub:
   # tab Actions → Report Instagram giornaliero → Run workflow
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "report = genera e invia; check = solo diagnostica"
+        type: choice
+        default: report
+        options:
+          - report
+          - check
 
 jobs:
   report:
@@ -35,4 +43,8 @@ jobs:
             echo "Vai su Settings → Secrets and variables → Actions e aggiungi le chiavi."
             exit 0
           fi
-          python instagram_report/daily_report.py
+          if [ "${{ inputs.mode }}" = "check" ]; then
+            python instagram_report/daily_report.py --check
+          else
+            python instagram_report/daily_report.py
+          fi
