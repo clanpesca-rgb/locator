@@ -122,6 +122,16 @@ def get_media_insights(media_id):
     return {"errore": dati.get("error", {}).get("message", "sconosciuto")}
 
 
+def carica_note_contenuti():
+    """Note del titolare sui contenuti (famiglia muto/parlato, formato, ecc.):
+    l'unica fonte affidabile per ciò che l'API non può dire."""
+    try:
+        with open(Path(__file__).parent / "note_contenuti.json", encoding="utf-8") as f:
+            return json.load(f).get("note", [])
+    except Exception:
+        return []
+
+
 def get_recent_posts():
     """Ultimi 10 post con metriche complete per ciascuno."""
     dati = _get(f"{BASE}/{IG_USER_ID}/media", {
@@ -129,8 +139,14 @@ def get_recent_posts():
         "limit": 10,
         "access_token": IG_TOKEN,
     })
+    note = carica_note_contenuti()
     for post in dati.get("data", []):
         post["insights"] = get_media_insights(post["id"])
+        caption = (post.get("caption") or "").lower()
+        for n in note:
+            if n.get("match", "").lower() in caption:
+                post["nota_titolare"] = {k: v for k, v in n.items() if k != "match"}
+                break
     return dati
 
 
@@ -222,6 +238,8 @@ POST E CAROSELLI — segnali principali:
 5. Like
 
 STORIES: strumento di retention e relazione, non indicatore principale della crescita.
+
+REGOLA FERREA — NON PUOI VEDERE I VIDEO: ricevi solo caption e numeri, mai il contenuto audio/video. Quindi NON affermare MAI formato, famiglia (muto/parlato), hook, audio, copertina o CTA di un post come se li conoscessi. L'UNICA fonte affidabile su questi aspetti è il campo "nota_titolare" del post (scritto dal titolare). Se un post ha "nota_titolare", usala come FATTO. Se non ce l'ha, scrivi "famiglia/formato non noti" e nella sezione Alert chiedi al titolare di comunicare la famiglia di quel post. Dedurre il formato dalla caption è VIETATO: è l'errore da non ripetere.
 
 DUE FAMIGLIE DI CONTENUTI (osservazione del titolare, confermata dai dati):
 • Reel MUTI/VISIVI (azione, senza parlato) → viaggiano senza barriera di lingua, generano condivisioni e reach internazionale. Sono il motore di CRESCITA. I 3 reel virali dell'account appartengono tutti a questa famiglia.
