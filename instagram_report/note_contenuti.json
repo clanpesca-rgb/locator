@@ -1,0 +1,35 @@
+{
+  "_istruzioni": "Verità sui contenuti che l'API di Instagram non fornisce (il report NON può vedere i video). Ogni voce viene agganciata al post la cui caption contiene 'match' (minuscolo). Campi liberi: famiglia = 'muto' (visivo/azione, viaggia internazionale) o 'parlato' (tutorial/prodotto in italiano), piu' eventuali note.",
+  "note": [
+    {
+      "match": "luccio la scambia",
+      "famiglia": "parlato",
+      "note": "Tutorial di montaggio esca per luccio girato in negozio, parlato in italiano. Hook iniziale muto di 4 secondi (esca che nuota in acqua con testo 'Guarda come nuota'). Nessuna CTA esplicita. Pubblicato il 21/07 primo pomeriggio."
+    },
+    {
+      "match": "trota native",
+      "famiglia": "muto",
+      "note": "Reel azione/relatable senza parlato. Uno dei 3 virali."
+    },
+    {
+      "match": "lake maggiore",
+      "famiglia": "muto",
+      "note": "Reel visivo on-field senza parlato. Uno dei 3 virali."
+    },
+    {
+      "match": "swimbait",
+      "famiglia": "muto",
+      "note": "Reel ironico/relatable senza parlato. Uno dei 3 virali."
+    },
+    {
+      "match": "jika",
+      "famiglia": "parlato",
+      "note": "Tutorial tecnico parlato in italiano."
+    },
+    {
+      "match": "tanny",
+      "famiglia": "parlato",
+      "note": "Presentazione prodotto parlata in italiano."
+    }
+  ]
+}
