@@ -5,9 +5,16 @@
         "source": "github",
         "repo": "obra/superpowers-marketplace"
       }
+    },
+    "genjutsu": {
+      "source": {
+        "source": "github",
+        "repo": "AThevon/genjutsu"
+      }
     }
   },
   "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true
+    "superpowers@superpowers-marketplace": true,
+    "genjutsu@genjutsu": true
   }
 }
