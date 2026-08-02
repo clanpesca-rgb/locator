@@ -495,3 +495,221 @@ input[type="number"]:focus {
 .text-center { text-align: center; }
 .text-muted { color: var(--text-secondary); }
 .font-bold { font-weight: 700; }
+
+/* ===== CTA download PDF ===== */
+.pdf-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.pdf-cta-text strong {
+    display: block;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.pdf-cta-text p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.pdf-cta .btn {
+    flex-shrink: 0;
+}
+
+/* ===== Modale PDF ===== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    padding: 32px;
+    width: 100%;
+    max-width: 440px;
+}
+
+.modal-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.modal-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.modal-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.modal-fields input[type="text"],
+.modal-fields input[type="email"] {
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.modal-fields input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.modal-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.modal-consent input {
+    margin-top: 2px;
+}
+
+.modal-error {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.modal-next {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+    .pdf-cta {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+/* ===== Pagina guida (link in bio) ===== */
+.guida-intro {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.guida-lista {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.guida-prezzo {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.guida-prezzo-cifra {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.guida-prezzo-nota {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.guida-waitlist {
+    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+    border: 1px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.guida-waitlist h3 {
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.guida-waitlist p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+
+.guida-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.guida-form input[type="email"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.guida-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.guida-free {
+    text-align: center;
+}
+
+.guida-free .btn {
+    margin-top: 12px;
+}
+
+.footer a {
+    color: inherit;
+}

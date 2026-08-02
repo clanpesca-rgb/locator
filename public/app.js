@@ -14,6 +14,21 @@ const resultsSection = document.getElementById('resultsSection');
 const resultsTitle = document.getElementById('resultsTitle');
 const resultsCount = document.getElementById('resultsCount');
 const resultsContainer = document.getElementById('resultsContainer');
+const pdfCta = document.getElementById('pdfCta');
+const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+const pdfModal = document.getElementById('pdfModal');
+const pdfModalClose = document.getElementById('pdfModalClose');
+const pdfModalForm = document.getElementById('pdfModalForm');
+const pdfModalThanks = document.getElementById('pdfModalThanks');
+const pdfNome = document.getElementById('pdfNome');
+const pdfEmail = document.getElementById('pdfEmail');
+const pdfConsent = document.getElementById('pdfConsent');
+const pdfModalError = document.getElementById('pdfModalError');
+const pdfGenerateBtn = document.getElementById('pdfGenerateBtn');
+
+// Ultima ricerca: serve per generare il PDF personalizzato
+let lastZones = [];
+let lastContext = '';
 
 // Event Listeners
 gpsBtn.addEventListener('click', handleGPSSearch);
@@ -216,6 +231,10 @@ function displayResults(zones, title) {
     resultsCount.textContent = `${zones.length} ${zones.length === 1 ? 'zona' : 'zone'}`;
     resultsContainer.innerHTML = '';
 
+    lastZones = zones;
+    lastContext = title;
+    pdfCta.style.display = zones.length > 0 ? 'flex' : 'none';
+
     if (zones.length === 0) {
         resultsContainer.innerHTML = `
             <div class="zone-card text-center">
@@ -328,6 +347,7 @@ function hideLoading() {
 function showError(message) {
     resultsTitle.textContent = 'Errore';
     resultsCount.textContent = '';
+    pdfCta.style.display = 'none';
     resultsContainer.innerHTML = `
         <div class="zone-card">
             <h3 style="color: var(--danger-color);">❌ ${message}</h3>
@@ -345,6 +365,111 @@ function showWarning(message) {
     warningDiv.className = 'note-warning';
     warningDiv.innerHTML = `<strong>⚠️ Attenzione:</strong> ${message}`;
     resultsContainer.insertBefore(warningDiv, resultsContainer.firstChild);
+}
+
+// ===== Download PDF personalizzato =====
+
+downloadPdfBtn.addEventListener('click', openPdfModal);
+pdfModalClose.addEventListener('click', closePdfModal);
+pdfModal.addEventListener('click', (e) => {
+    if (e.target === pdfModal) closePdfModal();
+});
+pdfGenerateBtn.addEventListener('click', handlePdfDownload);
+pdfEmail.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handlePdfDownload();
+});
+
+function openPdfModal() {
+    pdfModalForm.style.display = 'block';
+    pdfModalThanks.style.display = 'none';
+    pdfModalError.style.display = 'none';
+    pdfModal.style.display = 'flex';
+    pdfEmail.focus();
+}
+
+function closePdfModal() {
+    pdfModal.style.display = 'none';
+}
+
+function showPdfError(message) {
+    pdfModalError.textContent = message;
+    pdfModalError.style.display = 'block';
+}
+
+/**
+ * Registra il contatto su Netlify Forms.
+ * Se fallisce (es. in sviluppo locale) non blocca il download.
+ */
+async function submitLead(nome, email, contesto) {
+    try {
+        await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                'form-name': 'lead-pdf',
+                nome,
+                email,
+                contesto
+            }).toString()
+        });
+    } catch (error) {
+        console.warn('Invio lead non riuscito:', error);
+    }
+}
+
+async function handlePdfDownload() {
+    const email = pdfEmail.value.trim();
+    const nome = pdfNome.value.trim();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+        showPdfError('Inserisci un indirizzo email valido');
+        return;
+    }
+    if (!pdfConsent.checked) {
+        showPdfError('Per scaricare il PDF devi accettare la casella qui sopra');
+        return;
+    }
+
+    pdfModalError.style.display = 'none';
+    pdfGenerateBtn.disabled = true;
+    pdfGenerateBtn.textContent = 'Preparo il tuo PDF...';
+
+    try {
+        await submitLead(nome, email, lastContext);
+
+        const response = await fetch(`${API_BASE}/generate-pdf`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                nome,
+                contesto: lastContext,
+                zoneIds: lastZones.map(z => z.id)
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Errore del server (${response.status})`);
+        }
+
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'report-pronta-pesca.pdf';
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+
+        pdfModalForm.style.display = 'none';
+        pdfModalThanks.style.display = 'block';
+    } catch (error) {
+        console.error('Errore nella generazione del PDF:', error);
+        showPdfError('Non sono riuscito a generare il PDF. Riprova tra qualche istante.');
+    } finally {
+        pdfGenerateBtn.disabled = false;
+        pdfGenerateBtn.textContent = 'Scarica il PDF';
+    }
 }
 
 // Log di inizializzazione

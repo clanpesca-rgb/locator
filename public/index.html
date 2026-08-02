@@ -71,6 +71,13 @@
                     <h2 id="resultsTitle">Risultati della Ricerca</h2>
                     <span id="resultsCount" class="badge"></span>
                 </div>
+                <div id="pdfCta" class="pdf-cta" style="display: none;">
+                    <div class="pdf-cta-text">
+                        <strong>📄 Porta queste info con te</strong>
+                        <p>Scarica gratis il Report Pronta-Pesca: documenti, costi e contatti delle zone trovate, in PDF da stampare o tenere sul telefono (funziona anche offline).</p>
+                    </div>
+                    <button id="downloadPdfBtn" class="btn btn-primary">Scarica il PDF gratuito</button>
+                </div>
                 <div id="resultsContainer" class="results-container">
                     <!-- I risultati verranno inseriti qui dinamicamente -->
                 </div>
@@ -149,6 +156,45 @@
             <p>© 2023 A.T.S. delle Prealpi Lombarde F.I.P.S.A.S.</p>
             <p>Rispetta sempre le normative vigenti e l'ambiente</p>
         </footer>
+    </div>
+
+    <!-- Form nascosto: serve a Netlify Forms per registrare il form al deploy -->
+    <form name="lead-pdf" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="nome">
+        <input type="email" name="email">
+        <input type="text" name="contesto">
+        <input type="text" name="bot-field">
+    </form>
+
+    <!-- Modale download PDF -->
+    <div id="pdfModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <button id="pdfModalClose" class="modal-close" aria-label="Chiudi">&times;</button>
+
+            <div id="pdfModalForm">
+                <h3>📄 Il tuo Report Pronta-Pesca</h3>
+                <p class="modal-subtitle">Lascia la tua email e scarica subito il PDF personalizzato con documenti, costi e contatti delle zone trovate.</p>
+                <div class="modal-fields">
+                    <input type="text" id="pdfNome" placeholder="Il tuo nome (facoltativo)" maxlength="60">
+                    <input type="email" id="pdfEmail" placeholder="La tua email *" required maxlength="120">
+                    <label class="modal-consent">
+                        <input type="checkbox" id="pdfConsent">
+                        <span>Accetto di ricevere via email il PDF e occasionali novità di Clan Pesca. Niente spam, disiscrizione quando vuoi.</span>
+                    </label>
+                </div>
+                <p id="pdfModalError" class="modal-error" style="display: none;"></p>
+                <button id="pdfGenerateBtn" class="btn btn-primary btn-large">Scarica il PDF</button>
+            </div>
+
+            <div id="pdfModalThanks" style="display: none;">
+                <h3>✅ Fatto! Il download è partito</h3>
+                <p class="modal-subtitle">Il tuo Report Pronta-Pesca è in download. Buona pesca! 🎣</p>
+                <div class="modal-next">
+                    <a href="https://www.instagram.com/clanpesca/" target="_blank" rel="noopener" class="btn btn-secondary">📸 Seguici su Instagram</a>
+                    <a href="guida.html" class="btn btn-outline">🎣 Scopri la Guida Spinning al Luccio</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="app.js"></script>

@@ -17,7 +17,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@netlify/functions": "^2.8.2"
+    "@netlify/functions": "^2.8.2",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
     "netlify-cli": "^17.0.0"

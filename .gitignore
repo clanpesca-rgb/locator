@@ -4,3 +4,4 @@
 resources
 __pycache__
 .netlify
+node_modules/
