@@ -3,8 +3,15 @@
 Confronto dei prezzi dei prodotti venduti su [clanpesca.com](https://clanpesca.com)
 con i principali negozi online di pesca sportiva in Italia.
 
-**Stato: impostazione** — in attesa dello sblocco dell'accesso di rete
-dell'ambiente Claude Code per leggere i siti (vedi sotto).
+**Stato: prima rilevazione completata (4 agosto 2026)** — risultati in
+[`REPORT.md`](REPORT.md), tabella in [`confronto_prezzi.csv`](confronto_prezzi.csv),
+fonti in [`dati_grezzi.md`](dati_grezzi.md).
+
+La rete dell'ambiente è ancora bloccata (vedi in fondo): la rilevazione è stata
+fatta **via snippet dei motori di ricerca** (la ricerca web funziona anche con la
+policy restrittiva). Limiti: prezzi affidabili come ordine di grandezza ma non
+garantiti "live"; il prezzo Clan Pesca è emerso solo per 11 righe su 33 — per le
+altre la colonna è da completare dal gestionale (benchmark concorrenti già pronti).
 
 ## Obiettivo
 
@@ -57,10 +64,15 @@ per ogni prodotto contano i siti che lo trattano davvero.
 4. Sintesi: posizionamento medio di Clan Pesca, prodotti fuori mercato,
    opportunità di prezzo.
 
-## Vincolo tecnico da risolvere
+## Vincolo tecnico (ancora aperto)
 
 L'ambiente Claude Code remoto ha la policy di rete "solo domini fidati":
 `clanpesca.com` e i siti concorrenti sono bloccati (HTTP 403 sia da terminale
-sia dal fetcher). Per eseguire la ricerca serve impostare l'accesso di rete
-dell'ambiente su "tutti i domini" da claude.ai/code → impostazioni ambiente.
+sia dal fetcher; anche web.archive.org è bloccato). La prima rilevazione ha
+aggirato il blocco usando gli snippet dei motori di ricerca, che però non
+danno prezzi live né disponibilità.
+
+Per la **seconda passata** (prezzi live, copertura sistematica dei ~20 siti,
+monitoraggio periodico) serve impostare l'accesso di rete dell'ambiente su
+"tutti i domini" da claude.ai/code → impostazioni ambiente.
 Documentazione: https://code.claude.com/docs/en/claude-code-on-the-web
