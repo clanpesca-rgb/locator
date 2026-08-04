@@ -1,0 +1,38 @@
+id,categoria,prodotto,sku_clanpesca,prezzo_clanpesca_eur,url_clanpesca,nota_confronto
+P01,Mulinelli,Shimano Twin Power 2500FE,TP2500FE,419.00,https://clanpesca.com/prodotto/shimano-twin-power-2500fe/,Twin Power FE 2500
+P02,Mulinelli,Shimano Calcutta Conquest MD 401XGLH,CTCNQMD401XGLBH,485.00,https://clanpesca.com/prodotto/shimano-calcutta-conquest-md-401xglh/,Calcutta Conquest MD 400/401 XG LH
+P03,Mulinelli,Shimano Curado 151HG,CU151HGM,235.00,https://clanpesca.com/prodotto/shimano-curado-151hg/,Curado M 151HG
+P04,Mulinelli,Shimano SLX BFS XG,SLXBFSXGL,189.00,https://clanpesca.com/prodotto/shimano-slx-bfs-hg/,SLX BFS XG (left)
+P05,Mulinelli,Shimano Cardiff 301 A,CDF301A,99.50,https://clanpesca.com/prodotto/shimano-cardiff-301-a/,Cardiff 301A
+P06,Mulinelli,Shimano Aero XR 4000,AEROXR4000,149.00,https://clanpesca.com/prodotto/shimano-aero-xr-4000/,Aero XR 4000
+P07,Mulinelli,Shimano Seido 3000 SFA,SEIDO3000SFA--TO,75.00,https://clanpesca.com/prodotto/shimano-seido-3000-sfa/,Seido 3000 SFA trout area
+P08,Canne,Shimano Poison Adrena Spinning 266L Mt 1.98 Gr 3/10,5COK62664,289.90,https://clanpesca.com/prodotto/shimano-poison-adrena-spinning-266l-mt-1-98-gr-3-10/,Poison Adrena 266L (1.98m 3-10g)
+P09,Canne,Shimano Beast Master Cat Fish Lure Cm 240 Gr 150,SBMCAXL240,145.00,https://clanpesca.com/prodotto/shimano-beast-master-cat-fish-lure-cm-240-gr-150/,Beastmaster Catfish Lure 240 (150g)
+P10,Canne,Molix Fioretto Speciale 70FR,MFS-C-70FR,359.50,https://clanpesca.com/prodotto/molix-fioretto-speciale-70fr/,Fioretto Speciale Casting 70FR
+P11,Canne,Major Craft Finetail Begins 862MH Spinning,FFB-862MH,345.00,https://clanpesca.com/prodotto/major-craft-finetail-begins-862mh-spinning/,Finetail Begins FFB-862MH
+P12,Canne,"Favorite Alligator Travel 7'.7"" 4 Oz 120 Gr",FAALGE7740000,274.00,https://clanpesca.com/prodotto/favorite-alligator-travel-7-7-4-oz-120-gr/,"Alligator Travel 7'7"" 4oz"
+P13,Canne,Smith KOZ Expedition Magnum Husky 69H Cm 210 Gr 220,SMKOZMH00069H,559.00,https://clanpesca.com/prodotto/smith-koz-expedition-magnum-husky-69h-cm-210-gr-220/,KOZ Expedition Magnum Husky 69H
+P14,Artificiali,Molix Finder Jerk EVO 90 SP,FJE90SP,17.98,https://clanpesca.com/prodotto/molix-finder-jerk-evo-90-sp/,colore qualsiasi
+P15,Artificiali,"Molix Craw Flex 3""",CRFX,6.98,https://clanpesca.com/prodotto/molix-craw-flex-3/,colore qualsiasi
+P16,Artificiali,Molix Elite Area Spoon Gr 0.8,EAS08,6.50,https://clanpesca.com/prodotto/molix-elite-area-spoon-gr-0-8/,colore qualsiasi
+P17,Artificiali,"Keitech Swing Impact 3""",SWIMP3,8.90,https://clanpesca.com/prodotto/keitech-swing-impact-3/,colore qualsiasi
+P18,Artificiali,Gary Yamamoto Senko 4,9S10,13.00,https://clanpesca.com/prodotto/gary-yamamoto-senko-4/,"Senko 4"" (9S)"
+P19,Artificiali,Nories Laydown Minnow 110JP,NOLD110,22.90,https://clanpesca.com/prodotto/nories-laydown-minnow-110jp/,colore qualsiasi
+P20,Artificiali,Lucky Craft LC 2.5 Shallow Crank,LC-LC25,16.99,https://clanpesca.com/prodotto/lucky-craft-lc-2-5-shallow-crank/,LC 2.5 (Shallow) Crank
+P21,Artificiali,"LiveTarget Freestyle Frog 3""",FSF75T,11.90,https://clanpesca.com/prodotto/livetarget-freestyle-frog-3/,Freestyle Frog 75mm
+P22,Artificiali,Panther Martin Vespa Originale Gold Red 4,PM4V-GR,3.79,https://clanpesca.com/prodotto/panther-martin-vespa-originale-gold-red-gr-4/,Vespa mis. 4 classica
+P23,Artificiali,"Smith D-Incíte Cm 6,4",SMDINCI64,23.00,https://clanpesca.com/prodotto/smith-d-incite-cm-64/,D-Incite 64
+P24,Artificiali,"Shimano Yasei Trigger Twitch ""S"" Cm 6 Gr 4",LUYASTTSP06,9.95,https://clanpesca.com/prodotto/shimano-yasei-trigger-twitch-s-cm-6-gr-4/,Yasei Trigger Twitch S 60mm
+P25,Artificiali,Mustad Ink Vader Gr 150,MIVK150,19.00,https://clanpesca.com/prodotto/mustad-ink-vader-gr-150/,Ink Vader 150g
+P26,Fili,Tubertini Braided Line Viral MT 150 Ø 0.14,29081,24.50,https://clanpesca.com/prodotto/tubertini-braided-line-viral-mt-150-o-0-14/,Viral 150m Ø0.14
+P27,Fili,Climax Trecciato Laser Line MT 275 Verde Ø 0.14,OC400120-V,55.00,https://clanpesca.com/prodotto/climax-trecciato-laser-line-mt-275-verde-o-0-14/,Laser Line 275m Ø0.14 verde
+P28,Fili,Momoi Trecciato Ryujin MT 130 Ultra Soft 8 Braided PE  Ø 0.16,28294,55.90,https://clanpesca.com/prodotto/momoi-trecciato-ryujin-mt-130-ultra-soft-8-braided-pe-o-0-16/,Ryujin 130m Ø0.16
+P29,Fili,Strike Pro Trecciato Stike Wire Extreme MT 135 Ø 0.19,DYSW135-019,19.90,https://clanpesca.com/prodotto/strike-pro-trecciato-stike-wire-extreme-mt-135-o-0-19/,Strike Wire Extreme 135m Ø0.19
+P30,Fili,Unitika Compact Shock Leader Fluorocarbon 20 LB,4961704812824,7.90,https://clanpesca.com/prodotto/unitika-compact-shock-leader-fluorocarbon-20-lb/,Shock Leader FC 20lb
+P31,Minuteria,Owner 50045 Iseama Mis 8,OW50045-8,2.60,https://clanpesca.com/prodotto/owner-50045-iseama-mis-8/,Amo 50045 Iseama mis. 8
+P32,Minuteria,BKK Siren #3/0,A-EW-9213,4.95,https://clanpesca.com/prodotto/bkk-siren-2-0/,Siren 3/0
+P33,Minuteria,Decoy Worm 117 Mis 1/0,81827,5.90,https://clanpesca.com/prodotto/decoy-worm-117-mis-1-0/,Worm 117 HD Hook mis. 1/0
+P34,Minuteria,Girella Mikado Jaws Triple Swivels Kg 25 # 4.5 5Pz,AMA-J-002-01,3.90,https://clanpesca.com/prodotto/mikado-jaws-triple/,Jaws Triple Swivels 25kg #4.5
+P35,Accessori,Mehio Scatola Versus VS 3020 NS Black,16000,15.50,https://clanpesca.com/prodotto/mehio-scatola-versus-vs-3020-ns-black/,Meiho Versus VS-3020NS nera
+P36,Accessori,Valigetta Meiho VS 3080 Col Green,17534,94.90,https://clanpesca.com/prodotto/valigetta-meiho-vs-3080-col-green/,Meiho VS-3080 (verde o rosso)
+P37,Accessori,Molix Waterproof Dry Bag 25Lt,MWDB-25L,28.00,https://clanpesca.com/prodotto/molix-waterproof-dry-bag-25lt/,Dry Bag 25L
