@@ -25,23 +25,24 @@ copriva solo 4 prodotti; questa ricerca lo sostituisce con un campione ampio.
 | 2 | megafish.it | outlet, leader dal 2015 |
 | 3 | bassstoreitaly.com | >50.000 prodotti, spinning/bass |
 | 4 | sampey.it | Shimano/Daiwa/Trabucco |
-| 5 | piscor.com | prodotti introvabili |
-| 6 | bestpesca.com | prezzi aggressivi |
-| 7 | fishingitalia.com | feeder e colpo |
-| 8 | mondo-pesca.it | Trabucco/Daiwa/Italcanna |
-| 9 | pescafishingshop.com | outlet multi-marca |
-| 10 | marlinblue.it | mulinelli e mare |
-| 11 | pescapromo.it | promozioni |
-| 12 | misterfish.shop | Toscana, outlet |
-| 13 | free-fishing.it | generalista |
-| 14 | decathlon.it | grande distribuzione (Caperlan) |
-| 15 | pescanet.it | da verificare |
-| 16 | maxcatch / amazon.it | marketplace, prezzo di riferimento |
-| 17 | trovaprezzi.it | aggregatore (per scovare i minimi di mercato) |
-| 18 | idealo.it | aggregatore |
-| 19 | (da completare) | |
-| 20 | (da completare) | |
+| 5 | bestpesca.com | prezzi aggressivi |
+| 6 | fishingitalia.com | feeder e colpo |
+| 7 | mondo-pesca.it | Trabucco/Daiwa/Italcanna |
+| 8 | pescafishingshop.com | outlet multi-marca |
+| 9 | marlinblue.it | mulinelli e mare |
+| 10 | pescapromo.it | promozioni |
+| 11 | misterfish.shop | Toscana, outlet |
+| 12 | free-fishing.it | generalista |
+| 13 | decathlon.it | grande distribuzione (Caperlan) |
+| 14 | marcosportshop.com | Lonigo (VI), segnalato dal titolare |
+| 15 | webpesca.it | segnalato dal titolare |
+| 16 | propesca.it | attivo dal 1995 |
+| 17 | dimensionepesca.com | pesca e nautica |
+| 18 | pescamia.eu | generalista |
+| 19 | amazon.it | marketplace, prezzo di riferimento |
+| 20 | trovaprezzi.it / idealo.it | aggregatori, per i minimi di mercato |
 
+Esclusi: piscor.com (chiuso, segnalazione del titolare), pescanet.it (non verificato).
 La lista verrà rifinita in base ai marchi effettivi del catalogo Clan Pesca:
 per ogni prodotto contano i siti che lo trattano davvero.
 
