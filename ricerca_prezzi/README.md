@@ -10,14 +10,17 @@ campione: [`campione.csv`](campione.csv).
 
 ## In sintesi
 
-- Campione di **37 prodotti di marca disponibili** (7 mulinelli, 6 canne, 12 artificiali,
-  5 fili, 4 minuteria, 3 accessori) scelti tra i bestseller identificabili con
-  marca+modello, con variante esatta e SKU.
-- **18 prodotti confrontati** con almeno un concorrente a parità di modello/taglia:
-  Clan Pesca è in mediana **+4,4% sopra la mediana** dei concorrenti (11 sopra, 2 in
-  linea, 5 sotto). **19 prodotti non sono trattati da nessun concorrente verificato**
-  (distribuzione di fatto esclusiva).
-- Il concorrente più sovrapposto è **bassstoreitaly.com** (20 prodotti su 37).
+- Campione verificato a mano di **37 prodotti** + **analisi estesa su tutti i 1.177
+  prodotti di marca** del catalogo (matching automatico contro ~58.000 prodotti
+  concorrenti scaricati).
+- Perimetro concordato col titolare: esclusi Shimano, categoria Tuning e prodotti
+  senza concorrenza diretta; Daiwa non presente in catalogo.
+- Analisi estesa: **165 prodotti con prezzo concorrente abbinato**; dove c'è
+  sovrapposizione Clan Pesca è in mediana **~+9–10% sopra il miglior prezzo online**.
+  Marche più fuori mercato: Tubertini (+17%), Seika (+24%), Mustad (+30%); Molix e
+  BKK attorno a +8%; Heron e Panther Martin già competitive. ~1.000 prodotti di
+  marca non hanno alcun riscontro sui concorrenti verificabili.
+- Il concorrente più sovrapposto è **bassstoreitaly.com**.
 
 ## Nota sui marchi (correzione rispetto all'impostazione)
 

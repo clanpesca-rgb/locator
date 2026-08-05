@@ -1,7 +1,17 @@
 # Confronto prezzi Clan Pesca vs concorrenti online — Report
 
-**Data rilevazione: 5 agosto 2026** · Campione: 37 prodotti di marca disponibili ·
-Dettaglio completo riga per riga (777 rilevazioni, con URL di ogni prezzo): [`confronto_prezzi.csv`](confronto_prezzi.csv) · Campione: [`campione.csv`](campione.csv)
+**Data rilevazione: 5 agosto 2026** · Campione verificato a mano: 37 prodotti ·
+**Analisi estesa: tutto il catalogo di marca (1.177 prodotti)** ·
+Dati: [`confronto_prezzi.csv`](confronto_prezzi.csv) (campione, 777 rilevazioni) ·
+[`confronto_esteso.csv`](confronto_esteso.csv) (estesa, 203 confronti prezzati) ·
+[`campione.csv`](campione.csv)
+
+> **Perimetro concordato col titolare (5/8/2026):** esclusi dall'analisi operativa
+> **Shimano** (posizionamento già noto, pochi articoli a catalogo), la categoria
+> **Tuning** (prodotti propri) e i prodotti che nessun concorrente tratta (senza
+> concorrenza diretta non c'è confronto di prezzo). **Daiwa** non è presente nel
+> catalogo. Le rilevazioni Shimano del campione iniziale restano nel CSV e nella
+> tabella qui sotto come dato storico, ma sono fuori dalle raccomandazioni.
 
 ## Sintesi
 
@@ -97,29 +107,31 @@ mondo-pesca.it è diventato escaepescashop.it (redirect completo).
 
 ## Raccomandazioni operative
 
-**1. Ritoccare al ribasso i prodotti fuori mercato** (ordinati per urgenza — sono
-articoli-civetta che il cliente confronta con un click):
+**1. Ritoccare al ribasso i prodotti fuori mercato** (Shimano escluso su indicazione
+del titolare; ordinati per urgenza — sono articoli che il cliente confronta con un click):
 
 | Prodotto | Oggi | Riferimento mercato | Proposta |
 |----------|-----:|--------------------:|---------:|
-| Shimano SLX BFS XG | 189.00 | 169.99 disponibile (bassstore) | **169–175** |
-| Shimano Curado M 151HG | 235.00 | 209.99 disponibile (bassstore) | **210–219** |
 | Keitech Swing Impact 3" | 8.90 | 7.90 (escaepescashop) | **7.90–8.20** |
 | Momoi Ryujin 130m | 55.90 | 50.00 (dimensionepesca, tutte le Ø) | **49–52** |
 | LiveTarget Freestyle Frog | 11.90 | 10.80 (bassstore) | **10.80–11.20** |
 | Molix Craw Flex 3" | 6.98 | 6.39 mediana | **6.50** |
 | Molix Finder Jerk EVO 90 | 17.98 | 16.90 (bassstore) | **16.90–17.50** |
-| Shimano Aero XR 4000 | 149.00 | 140–144 disponibili | **142–145** |
 | Favorite Alligator Travel | 274.00 | 257.89 (bassstore) | **259–269** |
 
+Dall'analisi estesa (sotto) emergono altri ribassi candidati: Molix Sator Worm 4"/5",
+RT Fork Flex 4", Glide Bait 130, Hybrid Swimmer 165, BKK Duolock Snap 51 e Split Ring
+51, Tubertini Crossover 2 e borsa Offshore 550, Svivlo Draken 7.3, Carson Dark Matter
+PJDM-860 — dettaglio con prezzi e URL in [`confronto_esteso.csv`](confronto_esteso.csv).
+
 **2. Recuperare margine dove Clan Pesca è (troppo) il più economico:**
-- **Poison Adrena 266L**: 289.90 contro 341.95 dell'unico concorrente — si può salire
-  verso 315–329 restando i più economici (+€25–40 di margine a pezzo).
 - **Lucky Craft LC 2.5**: 16.99 contro 19.99 — spazio fino a ~18.50.
 - **Meiho VS-3080**: 94.90 contro 99–115 — eventualmente 97–99; oppure lasciarlo com'è
   come prezzo-civetta sulle valigette.
-- Senko 4", Vespa mis. 4, Cardiff 301A, Beastmaster 240, Twin Power FE 2500: in linea,
-  non toccare.
+- Dall'analisi estesa: Molix Jugulo Plus 10g (−30%), Ra Shad 2.5"/RT Fork Flex 3"
+  (−5/−10%), Freaky Craw 2.8" (−10%), Senko 4" (−12%): tutti sotto il miglior
+  concorrente — margine recuperabile senza perdere il primato di prezzo.
+- Senko 4", Vespa mis. 4: in linea, non toccare.
 
 **3. Sfruttare i 19 prodotti "esclusivi"** (nessun concorrente li tratta): Seido, KOZ
 Magnum Husky, D-Incite, Laydown Minnow, Ink Vader, Fioretto Speciale 70FR, Finetail
@@ -137,6 +149,51 @@ il margine si difende meglio e che differenziano il negozio.
 - Correggere il posizionamento dei 5 casi urgenti (SLX BFS, Curado, Swing Impact,
   Ryujin, Freestyle Frog) e verificare l'effetto su vendite/margine prima di estendere.
 
+## Analisi estesa: tutto il catalogo di marca (esclusi Shimano e Tuning)
+
+Su richiesta del titolare il confronto è stato esteso oltre il campione: **tutti i
+1.177 prodotti di marca** del catalogo sono stati incrociati automaticamente con i
+listini scaricati di 10 concorrenti (~58.000 prodotti totali, principalmente
+bassstore, pescapromo, webpesca, escaepescashop, bestpesca). Il matching è
+automatico sul nome (marca + modello + taglie/numeri) con tre livelli di confidenza;
+un controllo manuale a campione stima l'affidabilità del livello "esatto" attorno
+al 90% (l'errore tipico residuo: varianti speciali tipo barbless scambiate per la
+versione base).
+
+**Risultati (esclusi Shimano e categoria Tuning):**
+
+- **165 prodotti** hanno almeno un prezzo concorrente abbinato (203 rilevazioni);
+  di questi, **44 con match "esatto"** (marca+modello+taglia) e 113 a livello
+  "famiglia" (stesso modello, taglia non distinguibile dall'URL).
+- Delta mediano rispetto al **miglior** prezzo concorrente: **+8,8%** sui match
+  esatti, **+9,9%** su esatti+famiglia. In pratica: dove c'è sovrapposizione, Clan
+  Pesca è quasi sempre ~10% sopra il miglior prezzo online.
+- I restanti **~1.000 prodotti di marca non hanno riscontro** sui concorrenti
+  verificabili — coerente con la scelta del titolare di considerarli fuori
+  perimetro: su di essi la concorrenza di prezzo diretta è debole o assente.
+
+**Posizionamento per marca** (mediana vs miglior concorrente, match esatto+famiglia):
+
+| Marca | Prodotti confrontati | Posizione mediana |
+|-------|---------------------:|------------------:|
+| Mustad | 4 | **+30,5%** |
+| Seika | 5 | **+24,1%** |
+| Tubertini | 24 | **+16,8%** |
+| Carson | 3 | +15,9% |
+| OMTD | 10 | +10,8% |
+| Molix | 34 | +8,2% |
+| BKK | 31 | +7,6% |
+| Favorite | 5 | +4,3% |
+| Panther Martin | 4 | −2,5% |
+| Heron | 8 | −3,7% |
+
+Lettura: **Tubertini è il caso più serio** (24 prodotti confrontati, quasi tutti
+sopra mercato, mediana +17%); Molix e BKK — il cuore del catalogo — viaggiano
+attorno a +8% (tanti piccoli ritocchi possibili); Heron e Panther Martin sono già
+competitivi. Il dettaglio completo, prodotto per prodotto con URL, è in
+[`confronto_esteso.csv`](confronto_esteso.csv) (colonna `livello_match`:
+esatto / famiglia / probabile).
+
 ## Metodo e limiti
 
 - Catalogo Clan Pesca letto dalle pagine marca del sito (1.177 prodotti con prezzo e
@@ -148,7 +205,11 @@ il margine si difende meglio e che differenziano il negozio.
   (JSON-LD/microdati), mai stimati. Ogni prezzo nel CSV ha l'URL di provenienza.
 - Confronto **solo a parità di modello e taglia**; le somiglianze (altra taglia, serie
   diversa, metratura diversa) sono registrate come `variante_diversa` ed escluse dalle medie.
-- Limiti: 7 siti su 21 non verificabili per protezioni anti-bot; per 19 prodotti nessun
-  concorrente trovato (in parte reale esclusività, in parte possibile presenza su siti
-  bloccati); i prezzi di webpesca risultano spesso su articoli esauriti (listino, non
-  offerta reale). La rilevazione è una fotografia del 5 agosto 2026.
+- Analisi estesa: matching automatico nome→URL sui listini scaricati (livelli
+  esatto/famiglia/probabile, precisione stimata ~90% sul livello esatto tramite
+  controllo manuale a campione); scartati i rapporti di prezzo anomali (>3×) e i
+  match senza marca nello slug. È una stima direzionale, non una verifica manuale.
+- Limiti: 7 siti su 21 non verificabili per protezioni anti-bot; per i prodotti senza
+  riscontro non si può escludere la presenza sui siti bloccati; i prezzi di webpesca
+  risultano spesso su articoli esauriti (listino, non offerta reale). La rilevazione
+  è una fotografia del 5 agosto 2026.
