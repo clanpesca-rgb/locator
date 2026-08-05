@@ -10,16 +10,17 @@ campione: [`campione.csv`](campione.csv).
 
 ## In sintesi
 
-- Campione verificato a mano di **37 prodotti** + **analisi estesa su tutti i 1.177
-  prodotti di marca** del catalogo (matching automatico contro ~58.000 prodotti
-  concorrenti scaricati).
+- Campione verificato a mano di **37 prodotti** + **analisi sui 13 marchi prioritari
+  indicati dal titolare** (Molix, Mikado, Tubertini, Owner, BKK, Golden Catch,
+  Fladen, Panther Martin, Bone, Hart, Favorite, Major Craft, OMTD): 572 prodotti
+  incrociati con ~58.000 articoli concorrenti + API megafish.
 - Perimetro concordato col titolare: esclusi Shimano, categoria Tuning e prodotti
   senza concorrenza diretta; Daiwa non presente in catalogo.
-- Analisi estesa: **165 prodotti con prezzo concorrente abbinato**; dove c'è
-  sovrapposizione Clan Pesca è in mediana **~+9–10% sopra il miglior prezzo online**.
-  Marche più fuori mercato: Tubertini (+17%), Seika (+24%), Mustad (+30%); Molix e
-  BKK attorno a +8%; Heron e Panther Martin già competitive. ~1.000 prodotti di
-  marca non hanno alcun riscontro sui concorrenti verificabili.
+- **117 prodotti focus con prezzo concorrente**: in mediana Clan Pesca è **+9%
+  sopra il miglior prezzo online**. Priorità: **Tubertini (+14%)**; Molix e BKK
+  a +8% diffuso; Panther Martin e Favorite già in linea; **Owner, Golden Catch,
+  Bone (+ di fatto Mikado e Hart): nessuna concorrenza online rilevabile** —
+  prezzo libero, la leva è la visibilità.
 - Il concorrente più sovrapposto è **bassstoreitaly.com**.
 
 ## Nota sui marchi (correzione rispetto all'impostazione)

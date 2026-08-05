@@ -149,50 +149,54 @@ il margine si difende meglio e che differenziano il negozio.
 - Correggere il posizionamento dei 5 casi urgenti (SLX BFS, Curado, Swing Impact,
   Ryujin, Freestyle Frog) e verificare l'effetto su vendite/margine prima di estendere.
 
-## Analisi estesa: tutto il catalogo di marca (esclusi Shimano e Tuning)
+## Analisi sui 13 marchi prioritari
 
-Su richiesta del titolare il confronto è stato esteso oltre il campione: **tutti i
-1.177 prodotti di marca** del catalogo sono stati incrociati automaticamente con i
-listini scaricati di 10 concorrenti (~58.000 prodotti totali, principalmente
-bassstore, pescapromo, webpesca, escaepescashop, bestpesca). Il matching è
-automatico sul nome (marca + modello + taglie/numeri) con tre livelli di confidenza;
-un controllo manuale a campione stima l'affidabilità del livello "esatto" attorno
-al 90% (l'errore tipico residuo: varianti speciali tipo barbless scambiate per la
-versione base).
+Marchi indicati dal titolare (5/8/2026): **Molix, Mikado, Tubertini, Owner, BKK,
+Golden Catch, Fladen, Panther Martin, Bone, Hart, Favorite, Major Craft, OMTD** —
+572 prodotti a catalogo (esclusa la categoria Tuning). Ogni prodotto è stato
+incrociato con i listini scaricati di 10 concorrenti (~58.000 articoli) e con
+l'API di ricerca di megafish; matching automatico sul nome con tre livelli di
+confidenza (esatto / famiglia / probabile), affidabilità stimata ~90% sul livello
+esatto tramite controllo manuale a campione.
 
-**Risultati (esclusi Shimano e categoria Tuning):**
+**Risultato d'insieme: 117 prodotti su 572 hanno un prezzo concorrente; dove c'è
+sovrapposizione Clan Pesca è in mediana +9,0% sopra il miglior prezzo online**
+(77 più cari, 18 in linea ±2%, 22 più economici).
 
-- **165 prodotti** hanno almeno un prezzo concorrente abbinato (203 rilevazioni);
-  di questi, **44 con match "esatto"** (marca+modello+taglia) e 113 a livello
-  "famiglia" (stesso modello, taglia non distinguibile dall'URL).
-- Delta mediano rispetto al **miglior** prezzo concorrente: **+8,8%** sui match
-  esatti, **+9,9%** su esatti+famiglia. In pratica: dove c'è sovrapposizione, Clan
-  Pesca è quasi sempre ~10% sopra il miglior prezzo online.
-- I restanti **~1.000 prodotti di marca non hanno riscontro** sui concorrenti
-  verificabili — coerente con la scelta del titolare di considerarli fuori
-  perimetro: su di essi la concorrenza di prezzo diretta è debole o assente.
+| Marca | A catalogo | Confrontati | Posizione mediana | Note |
+|-------|-----------:|------------:|------------------:|------|
+| Molix | 151 | 34 | +8,2% | il cuore del catalogo: tanti ritocchi da ~0,50–1€ |
+| Mikado | 72 | 1 | (+34% su 1 caso) | quasi nessun concorrente online in Italia |
+| Tubertini | 68 | 27 | **+14,4%** | il caso più serio: quasi tutto sopra mercato |
+| Owner | 56 | 0 | — | nessun riscontro: prezzo libero |
+| BKK | 53 | 31 | +7,6% | come Molix: piccoli ritocchi diffusi |
+| Golden Catch | 39 | 0 | — | nessun riscontro: prezzo libero |
+| Fladen | 34 | 2 | (+117% su 2 capi) | solo 2 giacche a livello "famiglia": **verificare a mano** — pescapromo le svende |
+| OMTD | 29 | 10 | +10,8% | sopra mercato su ami/jig |
+| Bone | 24 | 0 | — | nessun riscontro: prezzo libero |
+| Hart | 16 | 1 | (+25% su 1 caso) | quasi solo voi online in Italia |
+| Major Craft | 14 | 2 | +11,9% | mulinello Ceana +16% |
+| Favorite | 9 | 5 | +4,3% | quasi in linea (X1 PRO +24% l'eccezione) |
+| Panther Martin | 7 | 4 | **−2,5%** | già competitivi: non toccare |
 
-**Posizionamento per marca** (mediana vs miglior concorrente, match esatto+famiglia):
+Lettura operativa:
 
-| Marca | Prodotti confrontati | Posizione mediana |
-|-------|---------------------:|------------------:|
-| Mustad | 4 | **+30,5%** |
-| Seika | 5 | **+24,1%** |
-| Tubertini | 24 | **+16,8%** |
-| Carson | 3 | +15,9% |
-| OMTD | 10 | +10,8% |
-| Molix | 34 | +8,2% |
-| BKK | 31 | +7,6% |
-| Favorite | 5 | +4,3% |
-| Panther Martin | 4 | −2,5% |
-| Heron | 8 | −3,7% |
+- **Tubertini è la priorità** (27 confronti, mediana +14%): borsa Offshore 550
+  (+24–95% a seconda del sito), Crossover 2 (+43%), Ionic 2 (+21%) e molta
+  minuteria. Qui un listino ritoccato cambia la percezione di prezzo del negozio.
+- **Molix e BKK** (65 confronti in due): sistematicamente +7–8% — non un singolo
+  errore ma una regola di ricarico leggermente sopra mercato; un ritocco del
+  5% circa su questi due marchi riallinea metà dei prodotti confrontabili.
+- **Owner, Golden Catch, Bone** (119 prodotti, un quinto del focus) più Hart e
+  Mikado di fatto: **nessuna concorrenza online rilevabile in Italia** — margine
+  difendibile, la leva è farli trovare (SEO/contenuti), non il prezzo.
+- **Panther Martin e Favorite**: già a posto.
+- Nei "top fuori mercato" pesano anche svendite outlet dei concorrenti (es. Molix
+  SC Bug a 3,49 su pescapromo): prima di ribassare, verificare dal CSV se il
+  concorrente è in liquidazione o a listino pieno.
 
-Lettura: **Tubertini è il caso più serio** (24 prodotti confrontati, quasi tutti
-sopra mercato, mediana +17%); Molix e BKK — il cuore del catalogo — viaggiano
-attorno a +8% (tanti piccoli ritocchi possibili); Heron e Panther Martin sono già
-competitivi. Il dettaglio completo, prodotto per prodotto con URL, è in
-[`confronto_esteso.csv`](confronto_esteso.csv) (colonna `livello_match`:
-esatto / famiglia / probabile).
+Dettaglio completo prodotto per prodotto con URL: [`confronto_esteso.csv`](confronto_esteso.csv)
+(166 righe, solo marchi focus; colonna `livello_match`).
 
 ## Metodo e limiti
 
