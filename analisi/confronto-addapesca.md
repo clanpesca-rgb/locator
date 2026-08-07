@@ -1,6 +1,6 @@
 # Clan Pesca vs Adda Pesca — confronto competitivo
 
-*Rilevazioni del 7 agosto 2026 su addapesca.com (sitemap, pagine categoria, condizioni), profili social e directory recensioni. Integra l'analisi competitiva del 6/8 (dove Adda Pesca non era nel panel) e il dossier esclusive JDM/ZELOS. Nota sui dati: prezzi, condizioni e struttura catalogo sono letti direttamente dai siti; i numeri social e le recensioni di terzi vengono da snippet pubblici e possono essere datati (Instagram e Google bloccano la lettura diretta). Il dato Instagram di Clan Pesca — **9.215 follower** — è fornito dalla proprietà il 7/8/2026: lo snippet pubblico ne mostrava ~5.760, a riprova che le cache possono sottostimare parecchio.*
+*Rilevazioni del 7 agosto 2026 su addapesca.com (sitemap, pagine categoria, condizioni), profili social e directory recensioni. Integra l'analisi competitiva del 6/8 (dove Adda Pesca non era nel panel) e il dossier esclusive JDM/ZELOS. Nota sui dati: prezzi, condizioni e struttura catalogo sono letti direttamente dai siti; i numeri social e le recensioni di terzi vengono da snippet pubblici e possono essere datati (Instagram, Facebook e Google bloccano la lettura diretta). I dati Instagram (**9.215**) e Facebook (**12.000**) di Clan Pesca sono forniti dalla proprietà il 7/8/2026: gli snippet pubblici mostravano ~5.760 e ~8.900, a riprova che le cache sottostimano del 25–40% — caveat che vale, in entrambe le direzioni, anche per i numeri di Adda Pesca.*
 
 ---
 
@@ -18,7 +18,7 @@
 - **Storia**: fondato dal titolare **Davide** nel **1995** (spinning sull'Adda col padre; dal 2005 la passione per il tropicale, con viaggio annuale alle Maldive). Team di 4 persone (Davide, Ginny, Riky, Alice). Stessa pasta di Clan: negozio di passione ventennale, non catena.
 - **E-commerce**: addapesca.com, costruito su **Jimdo** (site builder): niente ricerca evoluta, niente filtri, niente pagine prodotto indicizzabili singolarmente nella sitemap — ~340 pagine categoria/marca in sitemap, numero di referenze non esposto. Il sito è una vetrina-catalogo ben curata, non una piattaforma e-commerce da specialisti.
 - **Vertical dichiarati** (albero di navigazione): Bass fishing (85 sottopagine — il più grande), Pike fishing (70), Mare/Saltwater (59, incluso tropicale), Trota & Hucho (46), Abbigliamento (46), Siluro (15, con starter kit), "Big One" (8, il corredo da viaggio tropicale), Storione (7 — nicchia quasi unica in Italia), Persico (5), sezione monomarca FIIISH (5).
-- **Canali**: Instagram **@addapesca.sport ≈22.000 follower, 1.275 post** (più Threads ~2.400); Facebook ~10.600 like; **nessun canale YouTube rilevato**. WhatsApp business attivo (+39 329 2397852) e chat sul sito. *(Numeri social da snippet pubblici: le cifre live possono differire — per il profilo Clan lo stesso tipo di fonte sottostimava di ~3.500 follower.)*
+- **Canali**: Instagram **@addapesca.sport ≈22.000 follower, 1.275 post** (più Threads ~2.400); Facebook ~10.600 like; **nessun canale YouTube rilevato**. WhatsApp business attivo (+39 329 2397852) e chat sul sito. *(Numeri social da snippet pubblici: le cifre live possono differire — per i profili Clan lo stesso tipo di fonte sottostimava del 25–40%.)*
 - **Reputazione**: **≈348 recensioni Google, media 4,7/5** — clienti che li definiscono "punto di riferimento per i pescatori delle province di Bergamo e Milano". Nessun profilo Trustpilot rilevato (come voi).
 - **Servizio distintivo**: "**Le nostre guide**" — uscite a luccio a pagamento con guida (Adriano Marini) sui laghi di Bracciano, Salto, Turano, Piediluco, Matese e Bolsena, con noleggio artificiali, tutorial di lancio/recupero, foto/video inclusi, acconto+saldo. Il negozio vende *esperienze*, non solo attrezzatura.
 
@@ -40,7 +40,7 @@
 | Fedeltà | — | non rilevata (gift card sì) |
 | Recensioni | ~168 Google, 4,6 (da directory, da confermare) | **~348 Google, 4,7** (da directory) |
 | Instagram | **9.215** (dato proprietà, 7/8/2026) | **~22.000, 1.275 post** (snippet pubblico, da verificare live) |
-| Facebook | ~8.900 (indiretto) | ~10.600 (indiretto) |
+| Facebook | **12.000** (dato proprietà, 7/8/2026) | ~10.600 (snippet pubblico) |
 | YouTube | fermo | assente |
 | Servizi oltre la vendita | ritiro in negozio; (usato e tuning: potenziali, oggi spenti) | **guiding a pagamento sui grandi laghi**; ritiro in negozio |
 | Contenuti sul sito | blog fermo (5/2024) | nessun blog; "guide" = servizio guiding |
@@ -78,7 +78,7 @@ SLX 151 A a **89,90–119,90€** in "**Offerta bomba**" (il vostro SLX 151: 95�
 ## 6. Cosa imparare da loro (e cosa no)
 
 **Da imparare:**
-1. **Instagram come motore** — ≈22.000 follower e 1.275 post contro i vostri 9.215: un gap di ~2,4× con un negozio della vostra taglia, costruito sul volume di pubblicazione costante. La vostra arma per chiuderlo è il formato "parlato"/tutorial che loro non fanno (e senza YouTube non possono ospitare video lunghi). *(Il dato Adda è da snippet pubblico: prima di fissare obiettivi numerici, leggete il loro profilo live — lo stesso tipo di fonte sottostimava il vostro.)*
+1. **Instagram come motore** — ≈22.000 follower e 1.275 post contro i vostri 9.215: un gap di ~2,4× con un negozio della vostra taglia, costruito sul volume di pubblicazione costante. Su Facebook invece siete già davanti (12.000 contro i ~10.600 che gli snippet attribuiscono a loro): il ritardo è specifico di Instagram, non della vostra capacità di costruire community. La vostra arma per chiuderlo è il formato "parlato"/tutorial che loro non fanno (e senza YouTube non possono ospitare video lunghi). *(I dati Adda sono da snippet pubblici: prima di fissare obiettivi numerici, leggete i loro profili live — lo stesso tipo di fonte sottostimava i vostri del 25–40%.)*
 2. **Recensioni raccolte sul serio** — 348 a 4,7: il doppio delle vostre a parità di qualità percepita. Conferma la priorità "richiesta automatica post-ordine" del piano 90 giorni.
 3. **Il guiding come prodotto** — vendere uscite guidate (con noleggio esche e tutorial) trasforma la competenza in fatturato e crea clienti fidelizzati. La vostra versione naturale: **guide luccio/predatori su Verbano e laghi vostri** con un professionista convenzionato, prenotabili dal sito — loro guidano sui laghi del Centro Italia, il Nord-Ovest lacustre è libero.
 
