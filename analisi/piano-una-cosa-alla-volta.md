@@ -6,7 +6,7 @@
 
 ## Livello 1 — Il primo pomeriggio (tutte insieme fanno ~1 ora)
 
-- [ ] **1. Togliere Skype** — è un servizio morto dal 2025 e fa "sito abbandonato". Dove: è una **riga di testo, non un'icona**, nella pagina [Contatti](https://clanpesca.com/contatti/) — "Skype: CLAN_Pesca", nell'elenco recapiti sotto telefono ed email (verificato live l'8/8/2026). ⏱ 5 min. **Fatto quando:** la parola Skype non compare più in nessuna pagina.
+- [x] **1. Togliere Skype** — ✅ **CHIUSA l'8/8/2026**: la riga "Skype: CLAN_Pesca" è stata rimossa dalla pagina [Contatti](https://clanpesca.com/contatti/), che ora mostra solo telefono, email, indirizzo e orari (verificato live).
 - [ ] **2. Spegnere "Clan Usato"** — il link morto (`href="#"`) nel menu è peggio dell'assenza. Dove: Aspetto → Menu → rimuovere la voce (la riattivazione dell'usato è un progetto, arriva dopo — v. livello 4). ⏱ 5 min. **Fatto quando:** nel menu non c'è più una voce che non porta da nessuna parte.
 - [ ] **3. Nascondere gli esauriti dal catalogo** — oggi 1 scheda su 8 è "Esaurito" ma resta in vetrina. Dove: WooCommerce → Impostazioni → Prodotti → Inventario → spunta "Nascondi gli articoli esauriti dal catalogo". ⏱ 2 min. **Fatto quando:** sfogliando 3 categorie a caso non compaiono più esauriti.
 - [ ] **4. P.IVA e venditore coerente** — la P.IVA non è esposta e il bonifico è intestato a Carson Srl mentre le condizioni dicono Clan Pesca srl: per un nuovo cliente che deve bonificare 400€ è un freno. Dove: footer + pagina Condizioni + istruzioni bonifico; decidete la dicitura corretta (se il conto è di Carson Srl, va scritto lì il perché, es. "Carson Srl — società del gruppo Clan Pesca"). ⏱ 30 min. **Fatto quando:** ragione sociale e P.IVA identiche in footer, condizioni e pagina di pagamento.
