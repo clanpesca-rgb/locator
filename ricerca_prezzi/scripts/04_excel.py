@@ -180,3 +180,9 @@ for line in [
 
 wb.save(OUT)
 print("scritto", OUT, f"({last_d-1} righe dettaglio, {tot_conf} famiglie)")
+
+# copia i CSV finali dall'area di lavoro (ignorata da git) alla cartella versionata
+import shutil
+shutil.copy(os.path.join(REPO, "dati", "confronto_v2.csv"), os.path.join(REPO, "confronto_famiglie.csv"))
+shutil.copy(os.path.join(REPO, "dati", "catalogo_padri.csv"), os.path.join(REPO, "catalogo_padri.csv"))
+print("copiati confronto_famiglie.csv e catalogo_padri.csv in ricerca_prezzi/")

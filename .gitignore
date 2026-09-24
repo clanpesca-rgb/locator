@@ -4,3 +4,8 @@
 resources
 __pycache__
 .netlify
+
+# area di lavoro delle rilevazioni prezzi: i file qui dentro sono output
+# intermedi in scrittura; i risultati finali vengono copiati e committati
+# in ricerca_prezzi/ a rilevazione conclusa
+ricerca_prezzi/dati/
