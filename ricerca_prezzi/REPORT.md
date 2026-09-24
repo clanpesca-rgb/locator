@@ -1,5 +1,64 @@
 # Confronto prezzi Clan Pesca vs concorrenti online — Report
 
+## Rilevazione del 24 settembre 2026 (v2 — confronto per famiglie)
+
+**Metodo ridefinito col titolare:** unità di confronto = **prodotto padre** (famiglia),
+con **fascia di prezzo da–a** calcolata sulle varianti collegate (colore/misura);
+**la disponibilità è ignorata** — conta solo il prezzo. Esclusi Shimano e categoria
+Tuning; Daiwa non presente in catalogo.
+
+**Dati:** [`confronto_famiglie.csv`](confronto_famiglie.csv) (519 rilevazioni) ·
+[`catalogo_padri.csv`](catalogo_padri.csv) (1.084 padri con fasce) ·
+**[`confronto_prezzi_2026-09-24.xlsx`](confronto_prezzi_2026-09-24.xlsx)** (Excel, 4 fogli) ·
+pipeline rieseguibile in [`scripts/`](scripts/)
+
+### Risultato
+
+- **327 famiglie su 1.084 hanno almeno un prezzo web** (519 rilevazioni su 7 siti;
+  copertura quasi triplicata rispetto ad agosto grazie al confronto per famiglia).
+- Rispetto al **miglior prezzo web** di ogni famiglia: **Clan Pesca più cara in 250
+  casi, in fascia in 31, più economica in 46**. Delta mediano **+16%**.
+- Il riferimento resta **bassstoreitaly.com** (243 rilevazioni su 519).
+
+### Posizione per marca (mediana vs miglior prezzo web, marche con ≥5 confronti)
+
+| Marca | Confronti | Mediana | Più caro / in fascia / più economico |
+|-------|---------:|--------:|:--:|
+| Molix | 99 | **+19%** | 83 / 11 / 5 |
+| BKK | 38 | +10% | 25 / 7 / 6 |
+| Tubertini | 30 | **+15%** | 21 / 4 / 5 |
+| Nories | 13 | 0% | 6 / 6 / 1 |
+| OMTD | 10 | +11% | 6 / 2 / 2 |
+| Gator | 10 | +76%* | 10 / 0 / 0 |
+| Heron | 9 | 0% | 4 / 5 / 0 |
+| Owner | 8 | +31% | 6 / 1 / 1 |
+| Fiiish | 7 | +25% | 7 / 0 / 0 |
+| Favorite | 6 | +7% | 5 / 0 / 1 |
+| Little Jack | 6 | +27% | 6 / 0 / 0 |
+| Keitech | 5 | +23% | 5 / 0 / 0 |
+| Seika | 5 | +24% | 5 / 0 / 0 |
+| Panther Martin | 5 | 0% | 2 / 3 / 0 |
+| Legio Aurea | 5 | −4% | 0 / 0 / 5 |
+
+\* Gator: i prezzi bassi altrove sono in gran parte svendite outlet di pescapromo —
+verificare dai link prima di reagire.
+
+### Come leggere i dati
+
+- "Più caro" = il miglior prezzo web è **sotto** la fascia Clan Pesca da–a; "in
+  fascia" = cade dentro; "più economico" = il web costa più del massimo della fascia.
+  I delta sono calcolati sul bordo di fascia più vicino (prudenziali).
+- Ogni riga ha il **livello di match**: `esatto` (92) > `famiglia` (148) >
+  `probabile` (9) > `possibile` (270, nome giusto ma taglia non verificabile
+  dall'URL: un click sul link e si decide). La disponibilità del concorrente è
+  registrata ma non filtra nulla.
+- Siti non leggibili in automatico (bot-wall): pescaloccasione, amazon,
+  trovaprezzi, idealo, decathlon, marcosportshop, free-fishing.
+
+---
+
+# Rilevazione precedente (5 agosto 2026) — storico
+
 **Data rilevazione: 5 agosto 2026** · Campione verificato a mano: 37 prodotti ·
 **Analisi estesa: tutto il catalogo di marca (1.177 prodotti)** ·
 Dati: [`confronto_prezzi.csv`](confronto_prezzi.csv) (campione, 777 rilevazioni) ·

@@ -3,10 +3,13 @@
 Confronto dei prezzi dei prodotti venduti su [clanpesca.com](https://clanpesca.com)
 con i principali negozi online di pesca sportiva in Italia.
 
-**Stato: completata (prima rilevazione, 5 agosto 2026).**
-Risultati e raccomandazioni: **[REPORT.md](REPORT.md)** · dati completi:
-[`confronto_prezzi.csv`](confronto_prezzi.csv) (777 rilevazioni con URL) ·
-campione: [`campione.csv`](campione.csv).
+**Stato: rilevazione v2 completata (24 settembre 2026)** — confronto per **famiglie
+di prodotto** (prodotto padre, fascia da–a, disponibilità ignorata):
+**327 famiglie su 1.084 con prezzo web**, delta mediano **+16%** sul miglior prezzo.
+Risultati: **[REPORT.md](REPORT.md)** · [`confronto_famiglie.csv`](confronto_famiglie.csv) ·
+[`confronto_prezzi_2026-09-24.xlsx`](confronto_prezzi_2026-09-24.xlsx) ·
+pipeline rieseguibile in [`scripts/`](scripts/) (01 catalogo → 02 listini → 03 confronto → 04 excel).
+La prima rilevazione (5 agosto 2026, campione + 13 marchi) resta sotto come storico.
 
 ## In sintesi
 
