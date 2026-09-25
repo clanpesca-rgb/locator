@@ -9,3 +9,7 @@ __pycache__
 # intermedi in scrittura; i risultati finali vengono copiati e committati
 # in ricerca_prezzi/ a rilevazione conclusa
 ricerca_prezzi/dati/
+
+# contiene margini e dati derivati dal prezzo di acquisto: consegnato solo in
+# chat al titolare, mai nel repository
+ricerca_prezzi/confronto_prezzi_2026-09-25.xlsx

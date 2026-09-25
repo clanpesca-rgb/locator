@@ -6,11 +6,23 @@
 Livelli finali: ean > esatto > ean_ricerca > famiglia > probabile > possibile.
 Le righe 'ean_ricerca' senza marca nello slug diventano 'dubbio' (escluse dalle statistiche).
 """
-import csv, os, statistics, sys
+import csv, os, re, statistics, sys
 from collections import defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import norm
+from lib import norm, tokens_of
+
+
+def name_check(padre, url):
+    """Controllo per nome sullo slug: 'esatto' se parole+numeri, 'famiglia' se solo parole."""
+    words, nums = tokens_of(padre["nome"])
+    slug = re.sub(r"[^a-z0-9]+", " ", norm(url.split("//", 1)[-1].split("/", 1)[-1]))
+    sc = slug.replace(" ", "")
+    if not all((f" {w} " in f" {slug} ") or (len(w) >= 4 and w in sc) for w in words):
+        return None
+    if nums and all(n.replace(".", "") in sc for n in nums):
+        return "esatto"
+    return "famiglia"
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SCRATCH = os.environ.get("RICERCA_SCRATCH", "/tmp/claude-0/-home-user-locator/c6da37d9-3fe5-53b8-8609-51ea49daf62e/scratchpad")
@@ -49,17 +61,16 @@ def main():
                      "prezzo": float(r["prezzo_concorrente"]),
                      "conc_da": r["conc_da"], "conc_a": r["conc_a"],
                      "disp": r["disponibilita_concorrente"], "url": r["url_concorrente"]})
-    # ricerca EAN
+    # ricerca EAN: i motori fuzzy restituiscono molto rumore quando l'EAN non e'
+    # indicizzato -> teniamo solo le righe il cui URL supera anche il controllo
+    # per NOME (le altre si scartano del tutto)
     for r in csv.DictReader(open(os.path.join(REPO, "dati", "ean_ricerca.csv"))):
         pid = r["parent_id"]
         if pid not in padri:
             continue
-        lvl = r["livello"]
-        if lvl == "ean_ricerca":
-            marca_tok = [t for t in padri[pid]["marca"].replace("-", " ").split() if len(t) >= 3]
-            slug = norm(r["url"]).replace(" ", "")
-            if marca_tok and not all(t in slug for t in marca_tok):
-                lvl = "dubbio"
+        lvl = name_check(padri[pid], r["url"])
+        if lvl is None:
+            continue
         rows.append({"pid": pid, "sito": r["sito"], "livello": lvl, "prezzo": float(r["prezzo"]),
                      "conc_da": r["conc_da"], "conc_a": r["conc_a"], "disp": r["disp"], "url": r["url"]})
 

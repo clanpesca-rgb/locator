@@ -12,8 +12,10 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA = "24/09/2026"
-OUT = os.path.join(REPO, f"confronto_prezzi_2026-09-24.xlsx")
+V3 = os.path.join(REPO, "dati", "confronto_v3.csv")
+SRC = V3 if os.path.exists(V3) else os.path.join(REPO, "dati", "confronto_v2.csv")
+DATA = "25/09/2026" if SRC == V3 else "24/09/2026"
+OUT = os.path.join(REPO, f"confronto_prezzi_{'2026-09-25' if SRC == V3 else '2026-09-24'}.xlsx")
 
 F = "Arial"
 TITLE = Font(name=F, size=15, bold=True, color="1F3864")
@@ -35,7 +37,8 @@ def header_row(ws, row, headers, widths):
         ws.column_dimensions[get_column_letter(c)].width = wd
     ws.row_dimensions[row].height = 26
 
-rows = list(csv.DictReader(open(os.path.join(REPO, "dati", "confronto_v2.csv"))))
+rows = list(csv.DictReader(open(SRC)))
+HAS_MARGINI = "margine_attuale_pct" in rows[0]
 catalogo = list(csv.DictReader(open(os.path.join(REPO, "dati", "catalogo_padri.csv"))))
 tot_marca = defaultdict(int)
 for p in catalogo:
@@ -84,10 +87,14 @@ wsd.conditional_formatting.add(f"M2:M{last_d}", CellIsRule(operator="lessThan", 
 
 # ---------------- Confronto famiglie (una riga per padre)
 wsf = wb.create_sheet("Confronto famiglie")
-header_row(wsf, 1, ["ID", "Marca", "Prodotto (padre)", "Clan Pesca da", "Clan Pesca a",
-                    "N. siti con prezzo", "Miglior prezzo web", "Sito del migliore",
-                    "Posizione Clan Pesca", "Delta vs fascia"],
-           [8, 13, 46, 12, 12, 10, 12, 24, 16, 11])
+fam_hdr = ["ID", "Marca", "Prodotto (padre)", "Clan Pesca da", "Clan Pesca a",
+           "N. siti con prezzo", "Miglior prezzo web", "Sito del migliore",
+           "Posizione Clan Pesca", "Delta vs fascia"]
+fam_wd = [8, 13, 46, 12, 12, 10, 12, 24, 16, 11]
+if HAS_MARGINI:
+    fam_hdr += ["Margine attuale", "Margine se allineato"]
+    fam_wd += [11, 11]
+header_row(wsf, 1, fam_hdr, fam_wd)
 r = 2
 n_sites = defaultdict(set)
 for row in rows:
@@ -105,6 +112,11 @@ for pid, row in sorted(best.items(), key=lambda kv: (kv[1]["marca"], kv[1]["prod
     pos.font, pos.border = BASE, THIN
     d = wsf.cell(row=r, column=10, value=f"=IF(G{r}<D{r},(D{r}-G{r})/G{r},IF(G{r}>E{r},(E{r}-G{r})/G{r},0))")
     d.number_format, d.font, d.border = PCT, BASE, THIN
+    if HAS_MARGINI:
+        for c, key in ((11, "margine_attuale_pct"), (12, "margine_se_allineato_pct")):
+            v = row.get(key, "")
+            mc = wsf.cell(row=r, column=c, value=(float(v) / 100 if v else None))
+            mc.number_format, mc.font, mc.border = "0.0%", BASE, THIN
     r += 1
 last_f = r - 1
 wsf.freeze_panes = "A2"
@@ -182,7 +194,9 @@ wb.save(OUT)
 print("scritto", OUT, f"({last_d-1} righe dettaglio, {tot_conf} famiglie)")
 
 # copia i CSV finali dall'area di lavoro (ignorata da git) alla cartella versionata
-import shutil
-shutil.copy(os.path.join(REPO, "dati", "confronto_v2.csv"), os.path.join(REPO, "confronto_famiglie.csv"))
-shutil.copy(os.path.join(REPO, "dati", "catalogo_padri.csv"), os.path.join(REPO, "catalogo_padri.csv"))
-print("copiati confronto_famiglie.csv e catalogo_padri.csv in ricerca_prezzi/")
+# (solo per la v2: dalla v3 in poi ci pensa 06_v3.py, che sa quali colonne omettere)
+if not HAS_MARGINI:
+    import shutil
+    shutil.copy(os.path.join(REPO, "dati", "confronto_v2.csv"), os.path.join(REPO, "confronto_famiglie.csv"))
+    shutil.copy(os.path.join(REPO, "dati", "catalogo_padri.csv"), os.path.join(REPO, "catalogo_padri.csv"))
+    print("copiati confronto_famiglie.csv e catalogo_padri.csv in ricerca_prezzi/")

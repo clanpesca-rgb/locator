@@ -1,5 +1,25 @@
 # Confronto prezzi Clan Pesca vs concorrenti online — Report
 
+## Aggiornamento del 25 settembre 2026 (v3 — EAN e margini)
+
+Il titolare ha fornito l'export del gestionale (8.025 varianti, 6.003 EAN reali,
+706 famiglie agganciate al sito). Esito dell'integrazione:
+
+- **Verifica EAN dei match esistenti: i negozi concorrenti non pubblicano il
+  barcode nelle pagine** (0 gtin leggibili su 365 pagine) e i loro motori interni
+  non lo indicizzano: il canale EAN-web ha aggiunto solo 4 riscontri (330 famiglie
+  totali, +3). Il matching resta quindi basato sui nomi — con l'affidabilità già
+  nota — e gli EAN restano preziosi per i canali dove contano (Amazon,
+  trovaprezzi/idealo, o un eventuale servizio tipo Co-Guard).
+- **Margini integrati nel confronto**: sulle 206 famiglie "più care" con margine
+  noto, allinearsi al miglior prezzo web porterebbe il margine mediano dal 51% al
+  39% (sostenibile); in **28 casi il miglior prezzo web è sotto il costo di
+  acquisto** Clan Pesca (svendite outlet dei concorrenti o match da verificare):
+  lì non conviene inseguire. Il dettaglio, con le colonne margine, è nell'Excel
+  consegnato privatamente al titolare (i dati di acquisto non sono nel repository).
+
+---
+
 ## Rilevazione del 24 settembre 2026 (v2 — confronto per famiglie)
 
 **Metodo ridefinito col titolare:** unità di confronto = **prodotto padre** (famiglia),
